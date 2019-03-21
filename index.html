@@ -3,36 +3,34 @@
 <head>
 	<meta charset="utf-8">	
 	<title>Oxxo Maps - 2do Examen </title>
-
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
-
 
 </head>
 
 <body>
-	<div class="flex-container">
-		<img src="1280px-Oxxo_Logo.svg.png" width="100" height="90">
-		<h1>OXXO Bear Tracker - 2do Examen</h1> 
+	<center>
+		<div class="flex-container">
+			<img src="1280px-Oxxo_Logo.svg.png" width="100" height="90">
+			<h1>OXXO Bear Tracker - 2do Examen</h1> 
+		
 
-		<br><br>
+		<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+
+		<div id="map" class="map map-home" style="margin: 12px 0 12px 0;height:500px;"></div>
+
+		<script>
+			var osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+				osmAttrib = '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+				osm = L.tileLayer(osmUrl, {maxZoom: 20, attribution: osmAttrib});
+			var map = L.map('map').setView([19.8342089, -90.5008639], 14.5).addLayer(osm);
+			L.marker([19.8342089, -90.5008639])
+				.addTo(map)
+				.openPopup();
+
+		</script>
 	
+		</div>
 
-	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
-
-	<div id="map" class="map map-home" style="margin:10px 0 10px 0;height:50px;"></div>
-
-	<script>
-		var osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-			osmAttrib = '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-			osm = L.tileLayer(osmUrl, {maxZoom: 18, attribution: osmAttrib});
-		var map = L.map('map').setView([23.140445, -82.351644], 17).addLayer(osm);
-		L.marker([23.141165, -82.351834])
-			.addTo(map)
-			.bindPopup('La Catedral de la Habana.')
-			.openPopup();
-	</script>
-	
-	</div>
-
-  </body>
+</body>
 </html>
