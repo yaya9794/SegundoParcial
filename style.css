@@ -1,0 +1,22 @@
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.flex-container 
+{
+  height: 100vh;
+  width: 100%;
+  /* Flexbox*/
+  justify-content: center;
+  align-items: center; 
+  background: #E9967A; 
+ }
+
+ img{
+ 	height: 50px;
+ 	width: 50px;
+ 	align-items: center;
+ 	justify-content: center;
+ }
